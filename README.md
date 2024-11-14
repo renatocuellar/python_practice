@@ -17,7 +17,7 @@ The Katas folder contains coding challenges inspired by real-world problems and 
 Getting Started
 Clone this repository to your local machine:
 
-git clone https://github.com/your-username/repository-name.git
+git clone https://github.com/renatocuellar/python_practice
 
 Navigate to the desired folder (Exercises, Mini Exercises, or Katas) and start practicing!
 
