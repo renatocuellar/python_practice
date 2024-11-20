@@ -85,3 +85,50 @@ def mostrar_inventario(inventario):
         print("-" * 20)  # Línea divisoria
 
 mostrar_inventario(inventario)
+
+"""
+Parte 3: Actualizar el inventario
+Objetivo:
+Crear una función actualizar_producto que permita:
+
+Buscar un producto por su nombre.
+Actualizar su precio o cantidad según lo que el usuario desee.
+Si el producto no existe, muestra un mensaje indicando que no se encontró.
+Instrucciones:
+Solicita al usuario el nombre del producto.
+Si el producto existe:
+Pregunta si desea actualizar el precio o la cantidad.
+Actualiza el valor correspondiente.
+Si no existe, muestra un mensaje indicando que no se encontró.
+Pista:
+Usa input para preguntar qué valor se desea actualizar.
+Modifica el valor en el diccionario usando su clave: inventario[nombre]["precio"].
+"""
+
+def actualizar_producto(inventario):
+    # Solicitar el nombre del producto a actualizar
+    nombre_producto = input("Ingresa el nombre del producto a actualizar: ")
+
+    # Verificar si el producto existe en el inventario
+    if nombre_producto in inventario:
+        print(f"Producto encontrado: {nombre_producto}")
+        # Preguntar al usuario qué desea actualizar
+        opcion = input("¿Qué deseas actualizar? (precio/cantidad): ").lower()
+        
+        if opcion == "precio":
+            # Actualizar el precio
+            nuevo_precio = float(input("Ingresa el nuevo precio: "))
+            inventario[nombre_producto]["precio"] = nuevo_precio
+            print(f"El precio de '{nombre_producto}' ha sido actualizado a ${nuevo_precio:.2f}")
+        
+        elif opcion == "cantidad":
+            # Actualizar la cantidad
+            nueva_cantidad = int(input("Ingresa la nueva cantidad: "))
+            inventario[nombre_producto]["cantidad"] = nueva_cantidad
+            print(f"La cantidad de '{nombre_producto}' ha sido actualizada a {nueva_cantidad} unidades.")
+        
+        else:
+            print("Opción no válida. Por favor, elige entre 'precio' o 'cantidad'.")
+    else:
+        # Producto no encontrado
+        print(f"El producto '{nombre_producto}' no se encuentra en el inventario.")
