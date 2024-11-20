@@ -22,4 +22,21 @@ def es_primo(is_prime):
             return "No es primo"
     return "Es primo"
 
-print(es_primo)
+print(es_primo(is_prime))
+
+# Corregido
+
+# Solicitar número al usuario
+is_prime = int(input("¿Cuál es el número que quieres verificar? "))
+
+# Función para verificar si es primo
+def es_primo(numero):
+    if numero < 2:
+        return "No es primo"
+    for i in range(2, int(numero ** 0.5) + 1):
+        if numero % i == 0:
+            return "No es primo"
+    return "Es primo"
+
+# Imprimir el resultado
+print(es_primo(is_prime))
